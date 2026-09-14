@@ -4,7 +4,11 @@ print("I am thinking a number between 1 and 100")
 print("you have 7 attempts left")
 count = 0
 while count < 7:
-    num = int(input("Guess: "))
+    try:
+        num = int(input("Guess: "))
+    except ValueError:
+        print("Please enter a valid number.")
+        continue
     if    num == secret:
         print("correct")
         print(f"you finished this in {count + 1} attempts")
